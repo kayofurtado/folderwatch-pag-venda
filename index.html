@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FolderWatch | Sincronize Suas Pastas no Premiere Pro Automaticamente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #1A1A1A; /* Fundo escuro para destacar o conteúdo */
+            color: #E0E0E0;
+        }
+        .bg-rebecca-purple { background-color: #663399; }
+        .text-rebecca-purple { color: #663399; }
+        .border-rebecca-purple { border-color: #663399; }
+        .ring-rebecca-purple { --tw-ring-color: #663399; }
+        .bg-dark-gray-1 { background-color: #2D2D2D; }
+        .bg-dark-gray-2 { background-color: #404040; }
+        .gradient-text {
+            background: linear-gradient(90deg, #A881FF, #663399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .section-container {
+                padding: 6rem 2rem;
+            }
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+        .cta-primary {
+            background-color: #663399;
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(102, 51, 153, 0.39);
+        }
+        .cta-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px 0 rgba(102, 51, 153, 0.5);
+        }
+        .cta-secondary {
+            background-color: transparent;
+            color: #E0E0E0;
+            border: 2px solid #404040;
+        }
+        .cta-secondary:hover {
+            background-color: #404040;
+            color: white;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInAnimation 0.8s ease-out forwards;
+        }
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Estilos para o FAQ */
+        .faq-item summary {
+            cursor: pointer;
+            outline: none;
+        }
+        .faq-item[open] summary svg:last-child {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-dark-gray-1/80 backdrop-blur-lg border-b border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#663399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><path d="M12 11v6"></path><path d="m15 14-3 3-3-3"></path></svg>
+                    <span class="font-bold text-xl text-white">FolderWatch</span>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#pricing" class="cta-button cta-primary text-sm px-6 py-2">Começar Trial</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO 1 - HERO -->
+        <section class="section-container text-center pt-20 md:pt-32 pb-16 md:pb-24 overflow-hidden">
+            <div class="relative">
+                <div class="absolute -top-20 -left-40 w-96 h-96 bg-rebecca-purple/10 rounded-full blur-3xl opacity-50"></div>
+                <div class="absolute -bottom-20 -right-40 w-96 h-96 bg-rebecca-purple/10 rounded-full blur-3xl opacity-50"></div>
+                <div class="relative z-10">
+                    <div class="inline-block bg-dark-gray-1 border border-gray-700 rounded-full px-4 py-1.5 text-sm text-gray-300 mb-6 fade-in">
+                        Compatível com Adobe Premiere Pro 2024+
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 fade-in" style="animation-delay: 0.2s;">Sincronize Suas Pastas no <span class="gradient-text">Premiere Pro</span> Automaticamente</h1>
+                    <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-10 fade-in" style="animation-delay: 0.4s;">
+                        FolderWatch monitora suas pastas locais e mantém seus projetos sempre atualizados. Nunca mais importe arquivos manualmente.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12 fade-in" style="animation-delay: 0.6s;">
+                        <a href="#pricing" class="cta-button cta-primary w-full sm:w-auto">Começar Trial Gratuito (7 dias)</a>
+                        <a href="#demo" class="cta-button cta-secondary w-full sm:w-auto">Ver Demo</a>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto px-4 fade-in" style="animation-delay: 0.8s;">
+                        <div class="bg-dark-gray-1 p-2 rounded-xl border border-gray-700/50 shadow-2xl shadow-rebecca-purple/10">
+                             <img src="https://placehold.co/1200x675/2D2D2D/FFFFFF?text=Mockup+do+FolderWatch+no+Premiere+Pro" alt="Mockup da extensão FolderWatch funcionando no Adobe Premiere Pro" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2 - PROBLEMA/SOLUÇÃO -->
+        <section class="section-container text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 fade-in">Pare de Perder Tempo com Importação Manual</h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 fade-in">Seu fluxo de trabalho de edição merece ser mais inteligente, não mais difícil.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-12 fade-in">
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <i data-lucide="alert-circle" class="w-10 h-10 mx-auto mb-4 text-red-400"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Arquivos Desatualizados</h3>
+                    <p class="text-gray-400">Projetos com mídias antigas causam retrabalho e erros na exportação final.</p>
+                </div>
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <i data-lucide="clock" class="w-10 h-10 mx-auto mb-4 text-yellow-400"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Tempo Perdido</h3>
+                    <p class="text-gray-400">Horas gastas procurando, arrastando e soltando arquivos que poderiam ser automatizadas.</p>
+                </div>
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <i data-lucide="copy" class="w-10 h-10 mx-auto mb-4 text-blue-400"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Bins Desorganizados</h3>
+                    <p class="text-gray-400">Projetos confusos com arquivos duplicados e estruturas de pastas inconsistentes.</p>
+                </div>
+            </div>
+            <div class="fade-in">
+                <i data-lucide="arrow-down" class="w-12 h-12 mx-auto text-rebecca-purple mb-4"></i>
+                <p class="text-2xl font-bold text-white">FolderWatch é a solução definitiva.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3 - FEATURES PRINCIPAIS -->
+        <section class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">Recursos que Transformam seu Workflow</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">Desenvolvido para editores que valorizam tempo e organização.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 flex items-start space-x-4 fade-in">
+                    <div class="flex-shrink-0 w-12 h-12 bg-rebecca-purple/10 rounded-lg flex items-center justify-center"><i data-lucide="sparkles" class="w-6 h-6 text-rebecca-purple"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Smart Sync</h3>
+                        <p class="text-gray-400">Sincronização inteligente que evita duplicatas e mantém seu projeto limpo.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 flex items-start space-x-4 fade-in">
+                    <div class="flex-shrink-0 w-12 h-12 bg-rebecca-purple/10 rounded-lg flex items-center justify-center"><i data-lucide="radio-tower" class="w-6 h-6 text-rebecca-purple"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Monitor em Tempo Real</h3>
+                        <p class="text-gray-400">Detecta adições, exclusões ou renomeações de arquivos instantaneamente.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 flex items-start space-x-4 fade-in">
+                    <div class="flex-shrink-0 w-12 h-12 bg-rebecca-purple/10 rounded-lg flex items-center justify-center"><i data-lucide="layout-template" class="w-6 h-6 text-rebecca-purple"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Interface Apple-Style</h3>
+                        <p class="text-gray-400">Design limpo e profissional, perfeitamente integrado ao Premiere Pro.</p>
+                    </div>
+                </div>
+                 <!-- Feature Card 4 -->
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 flex items-start space-x-4 fade-in">
+                    <div class="flex-shrink-0 w-12 h-12 bg-rebecca-purple/10 rounded-lg flex items-center justify-center"><i data-lucide="folder-tree" class="w-6 h-6 text-rebecca-purple"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Bins Organizados</h3>
+                        <p class="text-gray-400">Replica a estrutura de pastas do seu sistema dentro do Premiere, automaticamente.</p>
+                    </div>
+                </div>
+                <!-- Feature Card 5 -->
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 flex items-start space-x-4 fade-in">
+                    <div class="flex-shrink-0 w-12 h-12 bg-rebecca-purple/10 rounded-lg flex items-center justify-center"><i data-lucide="film" class="w-6 h-6 text-rebecca-purple"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Formatos Suportados</h3>
+                        <p class="text-gray-400">Compatível com todos os formatos de vídeo, áudio e imagem que o Premiere Pro suporta.</p>
+                    </div>
+                </div>
+                 <!-- Feature Card 6 -->
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 flex items-start space-x-4 fade-in">
+                    <div class="flex-shrink-0 w-12 h-12 bg-rebecca-purple/10 rounded-lg flex items-center justify-center"><i data-lucide="power" class="w-6 h-6 text-rebecca-purple"></i></div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Zero Configuração</h3>
+                        <p class="text-gray-400">Instale, adicione uma pasta e veja a mágica acontecer. Funciona imediatamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO 4 - DEMO/SCREENSHOTS -->
+        <section id="demo" class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">Veja o FolderWatch em Ação</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">Uma experiência visual que se integra ao seu ambiente de trabalho.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fade-in">
+                    <img src="https://placehold.co/800x600/2D2D2D/FFFFFF?text=1.+Interface+da+Extensão" alt="Interface da extensão no painel do Premiere" class="rounded-lg w-full h-auto object-cover">
+                    <p class="text-center mt-3 text-gray-400">1. Interface limpa no painel do Premiere.</p>
+                </div>
+                <div class="fade-in">
+                    <img src="https://placehold.co/800x600/2D2D2D/FFFFFF?text=2.+Adicionar+Pasta" alt="Processo de adicionar pasta para monitoramento" class="rounded-lg w-full h-auto object-cover">
+                    <p class="text-center mt-3 text-gray-400">2. Adicione pastas com um único clique.</p>
+                </div>
+                <div class="fade-in">
+                    <img src="https://placehold.co/800x600/2D2D2D/FFFFFF?text=3.+Sincronização+em+Tempo+Real" alt="Sincronização acontecendo em tempo real" class="rounded-lg w-full h-auto object-cover">
+                    <p class="text-center mt-3 text-gray-400">3. Veja os arquivos aparecerem em tempo real.</p>
+                </div>
+                <div class="fade-in">
+                    <img src="https://placehold.co/800x600/2D2D2D/FFFFFF?text=4.+Bins+Organizados" alt="Bins organizados automaticamente" class="rounded-lg w-full h-auto object-cover">
+                     <p class="text-center mt-3 text-gray-400">4. Bins espelhando sua estrutura de pastas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 5 - SOCIAL PROOF -->
+        <section class="section-container">
+            <div class="text-center mb-12">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">Editores Profissionais Confiam no FolderWatch</h2>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 fade-in">
+                    <p class="text-gray-300 mb-4">"FolderWatch é uma daquelas ferramentas 'como eu vivia sem isso?'. Economizou horas no meu último projeto. Indispensável!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/663399/FFFFFF?text=JS" alt="Foto de Joana Silva" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-white">Joana Silva</p>
+                            <p class="text-sm text-gray-400">Editora Freelancer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 fade-in" style="animation-delay: 0.2s;">
+                    <p class="text-gray-300 mb-4">"A organização automática dos Bins é um divisor de águas. Meus projetos nunca estiveram tão limpos e fáceis de navegar."</p>
+                     <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/663399/FFFFFF?text=RM" alt="Foto de Roberto Mendes" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-white">Roberto Mendes</p>
+                            <p class="text-sm text-gray-400">Colorista e Editor, Starlight Films</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-dark-gray-1 p-6 rounded-lg border border-gray-800 fade-in" style="animation-delay: 0.4s;">
+                    <p class="text-gray-300 mb-4">"Finalmente uma solução robusta para sincronização de pastas. Funciona perfeitamente com nosso servidor local. A equipe adorou."</p>
+                     <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/663399/FFFFFF?text=CA" alt="Foto de Carlos Andrade" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-white">Carlos Andrade</p>
+                            <p class="text-sm text-gray-400">Chefe de Pós-Produção, Visionary Media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-2xl font-bold text-rebecca-purple my-12 fade-in">
+                Economize até 2 horas por projeto
+            </div>
+            <div class="flex justify-center items-center gap-8 md:gap-16 flex-wrap grayscale opacity-60 fade-in">
+                <span class="text-xl font-bold">Starlight Films</span>
+                <span class="text-xl font-bold">VISIONARY MEDIA</span>
+                <span class="text-xl font-bold">Pixel Perfect</span>
+                <span class="text-xl font-bold">Motion House</span>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 6 - COMPARAÇÃO -->
+        <section class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">FolderWatch vs. Método Manual</h2>
+                 <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">A diferença é clara. A escolha também.</p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-dark-gray-1 rounded-lg border border-gray-800 overflow-hidden fade-in">
+                <div class="grid grid-cols-3 text-center font-semibold text-white">
+                    <div class="p-4"></div>
+                    <div class="p-4 bg-rebecca-purple/20">FolderWatch</div>
+                    <div class="p-4 bg-gray-700/20">Manual</div>
+                </div>
+                <div class="divide-y divide-gray-800">
+                    <div class="grid grid-cols-3 items-center text-center">
+                        <div class="p-4 text-left font-semibold">Tempo de Importação</div>
+                        <div class="p-4 text-green-400">Segundos</div>
+                        <div class="p-4 text-red-400">Minutos a Horas</div>
+                    </div>
+                     <div class="grid grid-cols-3 items-center text-center bg-dark-gray-2/20">
+                        <div class="p-4 text-left font-semibold">Duplicatas</div>
+                        <div class="p-4 text-green-400">Zero (Smart Sync)</div>
+                        <div class="p-4 text-red-400">Muitas</div>
+                    </div>
+                    <div class="grid grid-cols-3 items-center text-center">
+                        <div class="p-4 text-left font-semibold">Erros Humanos</div>
+                        <div class="p-4 text-green-400">Zero</div>
+                        <div class="p-4 text-red-400">Frequentes</div>
+                    </div>
+                     <div class="grid grid-cols-3 items-center text-center bg-dark-gray-2/20">
+                        <div class="p-4 text-left font-semibold">Atualizações de Arquivos</div>
+                        <div class="p-4 text-green-400">Automáticas</div>
+                        <div class="p-4 text-red-400">Manuais e Propensas a Erros</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 7 - PRICING -->
+        <section id="pricing" class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">Planos Simples e Transparentes</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto fade-in">Um investimento no seu tempo e sanidade.</p>
+            </div>
+            <div class="max-w-md mx-auto bg-dark-gray-1 rounded-2xl border-2 border-rebecca-purple p-8 shadow-2xl shadow-rebecca-purple/20 transform scale-100 hover:scale-105 transition-transform duration-300 fade-in">
+                <h3 class="text-2xl font-bold text-white mb-2">FolderWatch</h3>
+                <p class="text-5xl font-bold text-white mb-4">R$50.00</p>
+                <p class="text-rebecca-purple font-semibold mb-6">Trial gratuito de 7 dias incluído.</p>
+                <ul class="space-y-4 text-gray-300 mb-8">
+                    <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-3"></i>1 ano de atualizações</li>
+                    <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-3"></i>Suporte técnico prioritário</li>
+                    <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-3"></i>Todas as atualizações gratuitas</li>
+                </ul>
+                <a href="#" class="cta-button cta-primary w-full text-lg">Começar Trial Gratuito</a>
+                <p class="text-xs text-gray-500 text-center mt-4">Compra segura. Garantia de 7 dias.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 8 - FAQ -->
+        <section class="section-container">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">Perguntas Frequentes</h2>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4 fade-in">
+                <details class="faq-item bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <summary class="flex justify-between items-center font-semibold text-white text-lg">
+                        Como instalo a extensão?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+                    </summary>
+                    <p class="mt-4 text-gray-400">Após a compra, você receberá um arquivo .zxp e um guia de instalação. A instalação é feita através do aplicativo Adobe Creative Cloud ou de um instalador de extensões como o ZXP Installer. Leva menos de 2 minutos.</p>
+                </details>
+                <details class="faq-item bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <summary class="flex justify-between items-center font-semibold text-white text-lg">
+                        Quais formatos são suportados?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+                    </summary>
+                    <p class="mt-4 text-gray-400">FolderWatch suporta qualquer formato de arquivo que o Adobe Premiere Pro consegue importar nativamente, incluindo vídeos (MP4, MOV, MXF), áudios (WAV, MP3, AIF), imagens (JPEG, PNG, PSD) e muito mais.</p>
+                </details>
+                 <details class="faq-item bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <summary class="flex justify-between items-center font-semibold text-white text-lg">
+                        Funciona com projetos existentes?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+                    </summary>
+                    <p class="mt-4 text-gray-400">Sim! Você pode abrir um projeto existente, ativar o FolderWatch para monitorar suas pastas de mídia e ele começará a sincronizar novos arquivos sem afetar o que já está no seu projeto.</p>
+                </details>
+                <details class="faq-item bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <summary class="flex justify-between items-center font-semibold text-white text-lg">
+                        Precisa de internet sempre?
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+                    </summary>
+                    <p class="mt-4 text-gray-400">Não. A internet só é necessária para a ativação inicial da licença. Depois disso, o FolderWatch funciona totalmente offline, monitorando suas pastas locais ou em rede local.</p>
+                </details>
+                <details class="faq-item bg-dark-gray-1 p-6 rounded-lg border border-gray-800">
+                    <summary class="flex justify-between items-center font-semibold text-white text-lg">
+                        Como renovo a licença?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+                    </summary>
+                    <p class="mt-4 text-gray-400">Perto do final do seu período de licença de 1 ano, você receberá um email com um link para renovar sua assinatura com um desconto especial de fidelidade. O processo é simples e rápido.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 9 - CTA FINAL -->
+        <section class="section-container text-center">
+            <div class="max-w-3xl mx-auto bg-dark-gray-1 rounded-2xl p-8 md:p-12 border border-gray-800 fade-in">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pronto para Acelerar seu Workflow?</h2>
+                 <p class="text-lg text-gray-400 mb-8">Junte-se a centenas de editores que economizam horas toda semana. Comece seu trial gratuito e sinta a diferença.</p>
+                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#pricing" class="cta-button cta-primary w-full sm:w-auto">Começar Trial Gratuito</a>
+                    <a href="#" class="cta-button cta-secondary w-full sm:w-auto">Falar com Suporte</a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray-1 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2024 FolderWatch. Todos os direitos reservados. Adobe e Premiere Pro são marcas registradas da Adobe Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Animações de fade-in ao rolar a página
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-visible');
+                    entry.target.style.animation = 'fadeInAnimation 0.8s ease-out forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
